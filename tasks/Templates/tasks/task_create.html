@@ -1,81 +1,78 @@
-<!-- tasks/task_create.html -->
-
 {% extends 'tasks/base.html' %}
 
 {% block title %}Create Task{% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h1 class="mb-0" style="text-align: center;">Create Task</h1>
-            </div>
-            <div class="card-body">
-                <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary btn-block">Create Task</button>
-                </form>
-            </div>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h1 class="mb-0" style="text-align: center;">Create Task</h1>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary btn-block">Create Task</button>
+            </form>
         </div>
     </div>
+</div>
 
-    <!-- Custom CSS -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
+<!-- Custom CSS -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
 
-        .card {
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .card {
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .card-header {
-            border-bottom: 1px solid #dee2e6;
-        }
+    .card-header {
+        border-bottom: 1px solid #dee2e6;
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    .form-group {
+        margin-bottom: 20px;
+    }
 
-        label {
-            font-weight: bold;
-            width: 100%;
-            display: inline-block;
-        }
+    label {
+        font-weight: bold;
+        width: 100%;
+        display: inline-block;
+    }
 
-        input[type="text"],
-        input[type="password"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
 
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            width: 100%;
-        }
-
-    </style>
-
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAiOkp0k8RXP5th2HPp5Sl0uSsh8R/D" crossorigin="anonymous">
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        width: 100%;
+    }
+</style>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAiOkp0k8RXP5th2HPp5Sl0uSsh8R/D" crossorigin="anonymous">
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-4bJT+qCI0hV+IZZ83dD7XF9D3U09p0c0hsvLFXCYd0zcmx2oq6tgOf1I9unS1SE6" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-4bJT+qCI0hV+IZZ83dD7XF9D3U09p0c0hsvLFXCYd0zcmx2oq6tgOf1I9unS1SE6" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAiOkp0k8RXP5th2HPp5Sl0uSsh8R/D" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAiOkp0k8RXP5th2HPp5Sl0uSsh8R/D" crossorigin="anonymous">
     </script>
 
 
