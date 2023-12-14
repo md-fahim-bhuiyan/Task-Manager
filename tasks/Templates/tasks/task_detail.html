@@ -1,0 +1,31 @@
+<!-- tasks/task_detail.html -->
+
+{% extends 'tasks/base.html' %}
+
+{% block title %}Task Details{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h1 class="mb-0">Task Details</h1>
+            </div>
+            <div class="card-body">
+                <h2>{{ task.title }}</h2>
+                <p>Description: {{ task.description }}</p>
+                <p>Due Date: {{ task.due_date }}</p>
+                <p>Priority: {{ task.get_priority_display }}</p>
+                <p>Completed: {% if task.is_complete %}Yes{% else %}No{% endif %}</p>
+
+                {% if task.photos %}
+                    <h3>Photos:</h3>
+                    <img src="{{ task.photos.url }}" alt="{{ task.title }} - Photo">
+                {% endif %}
+                
+
+
+                <a href="{% url 'task_list' %}" class="btn btn-secondary">Back to Task List</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

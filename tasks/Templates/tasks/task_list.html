@@ -1,0 +1,57 @@
+<!-- tasks/task_list.html -->
+
+{% extends 'tasks/base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+    <h1>Task List</h1>
+
+    <!-- Add a search form with Bootstrap styling -->
+    <form method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search by Title" value="{{ query }}">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    {% if tasks %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Creation Date</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Completed</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.creation_date }}</td>
+                        <td>{{ task.due_date }}</td>
+                        <td>{{ task.get_priority_display }}</td>
+                        <td>{% if task.is_complete %}Yes{% else %}No{% endif %}</td>
+                        
+                            <td>
+                                <a href="{% url 'task_detail' pk=task.pk %}" class="btn btn-info">View Details</a>
+                                <a href="{% url 'task_update' pk=task.pk %}" class="btn btn-warning">Edit</a>
+                                <a href="{% url 'task_delete' pk=task.pk %}" class="btn btn-danger">Delete</a>
+                            </td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No tasks available.</p>
+    {% endif %}
+
+    <!-- Add pagination or other navigation controls if needed -->
+
+{% endblock %}
